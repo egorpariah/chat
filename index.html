@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <link rel="stylesheet" href="/node_modules/cropperjs/dist/cropper.css">
+</head>
+
+<body>
+  <div id="app" class="app">
+    <div id="login" class="login hidden">
+      <form class="login__form">
+        <div class="login__logo"></div>
+        <h2 class="login__title">Авторизация</h2>
+        <p class="login__subtitle">Введите, пожалуйста, свой ник</br>для дальнейшей авторизации</p>
+        <input class="login__input" data-role="login-nick-input" type="text" placeholder="Введите свой ник" required>
+        <button class="login__button button" data-role="login-button" type="submit">Войти</button>
+        <div class="login__error" data-role="login-error"></div>
+      </form>
+    </div>
+
+    <div id="chat" class="chat hidden">
+      <div class="chat__sidebar">
+        <button class="chat__menu" data-role="menu-open"></button>
+        <div class="chat__users" data-role="chat-users"></div>
+      </div>
+      <div class="chat__messenger">
+        <div class="chat__header">
+          <h2 class="chat__title">Чат</h2>
+          <div class="chat__users-counter" data-role="users-counter"></div>
+        </div>
+        <div class="chat__messages" data-role="messages-list"></div>
+        <div class="chat__input-container" data-role="message-sender">
+          <input class="chat__message-input" data-role="message-input" type="text" placeholder="Введите сообщение..."
+            required>
+          <button class="chat__send-button button button--small" data-role="message-send-button"
+            type="submit">Отправить</button>
+        </div>
+      </div>
+      <div class="chat__photo-uploader hidden" data-role="photo-uploader">
+        <div class="chat__overlay" data-role="popup-overlay"></div>
+        <div class="chat__upload-photo upload-photo" data-role="upload-popup">
+          <h3 class="upload-photo__title">Загрузка фото</h3>
+          <div class="upload-photo__user">
+            <div class="upload-photo__photo" data-role="user-photo"></div>
+            <div class="upload-photo__nick" data-role="user-nick"></div>
+          </div>
+          <button class="upload-photo__close" data-role="upload-close"></button>
+        </div>
+      </div>
+      <div class="chat__set-photo set-photo hidden" data-role="set-photo">
+        <div class="set-photo__area" data-role="set-photo-area">
+          <img class="set-photo__img" data-role="set-photo-img" src="" alt="">
+        </div>
+        <p class="set-photo__subtitle">Область для профильной фотографии</p>
+        <div class="set-photo__buttons">
+          <button class="set-photo__cancel button button--transparent button--middle"
+            data-role="cancel-button">Отмена</button>
+          <button class="set-photo__save button button--transparent button--middle"
+            data-role="save-button">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

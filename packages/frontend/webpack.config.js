@@ -16,14 +16,14 @@ const config = {
     },
     proxy: {
       '/websocket': {
-        target: 'ws://[::1]:8282',
+        target: 'ws://[::1]:3000',
         ws: true,
       },
       '/upload-photo': {
-        target: 'http://localhost:8282',
+        target: 'http://localhost:3000',
       },
       '/src/img': {
-        target: 'http://localhost:8282',
+        target: 'http://localhost:3000',
       },
     },
     hot: true,

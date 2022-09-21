@@ -1,5 +1,3 @@
-import PhotoUploader from './photoUploader.mjs';
-
 export default class ChatWindow {
   constructor(element, onMenuClick) {
     this.element = element;

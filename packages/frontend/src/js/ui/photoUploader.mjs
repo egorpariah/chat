@@ -1,8 +1,8 @@
 export default class PhotoUploader {
   constructor(element) {
     this.element = element;
-    this.closeButton = this.element.querySelector('[data-role="upload-close"]');
-    this.overlay = this.element.querySelector('[data-role="popup-overlay"]');
+    this.closeButton = element.querySelector('[data-role="upload-close"]');
+    this.overlay = element.querySelector('[data-role="popup-overlay"]');
 
     this.closeButton.addEventListener('click', () => this.hide());
     this.element.addEventListener('click', (e) => {

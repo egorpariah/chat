@@ -1,0 +1,17 @@
+{
+  "name": "@chat/backend",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "node index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egorpariah/chat.git",
+    "directory": "packages/backend"
+  },
+  "author": "Egor Golikov",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.8.1"
+  }
+}

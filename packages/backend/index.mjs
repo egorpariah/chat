@@ -6,6 +6,7 @@ import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const PORT = process.env.PORT || 3000;
 
 function readBody(req) {
   return new Promise((resolve, reject) => {
@@ -19,11 +20,10 @@ function readBody(req) {
 
 const server = http.createServer(async (req, res) => {
   try {
-    res.setHeader('Access-Control-Allow-Origin', '*');
     if (/\/img\/.+\.png/.test(req.url)) {
       const [, imageName] = req.url.match(/\/img\/(.+\.png)/) || [];
-      const fallBackPath = path.resolve(__dirname, '../src/img/no-photo.png');
-      const filePath = path.resolve(__dirname, '../src/img/', imageName);
+      const fallBackPath = path.resolve(__dirname, '../frontend/src/img/no-photo.png');
+      const filePath = path.resolve(__dirname, './users/', imageName);
 
       if (fs.existsSync(filePath)) {
         return fs.createReadStream(filePath).pipe(res);
@@ -34,7 +34,7 @@ const server = http.createServer(async (req, res) => {
       const body = await readBody(req);
       const nick = body.nick.replace(/\.\.\/|\//, '');
       const [, content] = body.image.match(/data:image\/.+?;base64,(.+)/) || [];
-      const filePath = path.resolve(__dirname, '../src/img/', `${nick}.png`);
+      const filePath = path.resolve(__dirname, './users/', `${nick}.png`);
 
       if (nick && content) {
         fs.writeFileSync(filePath, content, 'base64');
@@ -51,6 +51,7 @@ const server = http.createServer(async (req, res) => {
     res.end('fail');
   }
 });
+
 const wss = new WebSocketServer({ server });
 const connections = new Map();
 
@@ -110,4 +111,4 @@ function sendMessageFrom(connections, message, from, excludeItself) {
   }
 }
 
-server.listen(8282);
+server.listen(PORT);

@@ -1,6 +1,6 @@
 # Чат
 
-Чат на веб-сокетах с Node.js-сервером и загрузкой фото на cropperjs.
+Чат на веб-сокетах с Node.js-сервером, загрузкой фото на cropperjs и сохранением пользователей.
 
 ## Локальный запуск
 
@@ -10,7 +10,7 @@
 
 ## Скрипты
 
-`npm run build` — сборка в prod-режиме
-`npm run serve` — запуск webpack-сервера в dev-режиме
-`npm run api` — запуск сервера Node.js
-`npm start` — запуск сервера Node.js и webpack-сервера в dev-режиме
+- `npm run build` — сборка в prod-режиме
+- `npm run watch` — запуск webpack-сервера в dev-режиме
+- `npm run serve` — запуск сервера Node.js
+- `npm start` — запуск сервера Node.js и webpack-сервера в dev-режиме

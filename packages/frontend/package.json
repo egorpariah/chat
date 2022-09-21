@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.18.10",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^8.0.1",
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.2",
     "html-loader": "^4.1.0",

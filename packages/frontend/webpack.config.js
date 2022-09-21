@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 const globImporter = require('node-sass-glob-importer');
 
 const config = {
@@ -93,6 +94,7 @@ const config = {
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
+    new Dotenv(),
   ],
 };
 

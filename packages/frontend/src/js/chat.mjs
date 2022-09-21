@@ -12,10 +12,9 @@ import SetPhoto from './ui/setPhoto.mjs';
 
 export default class Chat {
   constructor() {
-    this.wsClient = new WSClient(
-      `ws://${location.host}/websocket`,
-      this.onMessage.bind(this)
-    );
+    let apiURL = process.env.API_URL;
+    if (location.hostname === 'localhost') apiURL = `ws://${location.host}`;
+    this.wsClient = new WSClient(`${apiURL}/websocket`, this.onMessage.bind(this));
 
     this.ui = {
       loginWindow: new LoginWindow(

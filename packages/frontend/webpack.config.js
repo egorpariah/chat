@@ -23,7 +23,7 @@ const config = {
       '/upload-photo': {
         target: 'http://localhost:3000',
       },
-      '/src/img': {
+      '/users': {
         target: 'http://localhost:3000',
       },
     },

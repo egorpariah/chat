@@ -60,7 +60,7 @@ export default class Chat {
     this.ui.chatWindow.show();
     this.ui.messagesList.setScrollMargin();
     this.ui.nickName.set(nick);
-    this.ui.userPhoto.set(`/src/img/${nick}.png?t=${Date.now()}`);
+    this.ui.userPhoto.set(`/users/${nick}.png?t=${Date.now()}`);
   }
 
   onUpload(data) {
@@ -99,7 +99,7 @@ export default class Chat {
         `[data-role="user-avatar"][data-user="${data.nick}"]`
       );
       for (const avatar of avatars) {
-        avatar.style.backgroundImage = `url(/src/img/${data.nick}.png?t=${Date.now()})`;
+        avatar.style.backgroundImage = `url(/users/${data.nick}.png?t=${Date.now()})`;
       }
     }
   }

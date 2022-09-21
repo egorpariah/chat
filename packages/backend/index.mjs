@@ -20,8 +20,8 @@ function readBody(req) {
 
 const server = http.createServer(async (req, res) => {
   try {
-    if (/\/img\/.+\.png/.test(req.url)) {
-      const [, imageName] = req.url.match(/\/img\/(.+\.png)/) || [];
+    if (/\/users\/.+\.png/.test(req.url)) {
+      const [, imageName] = req.url.match(/\/users\/(.+\.png)/) || [];
       const fallBackPath = path.resolve(__dirname, '../frontend/src/img/no-photo.png');
       const filePath = path.resolve(__dirname, './users/', imageName);
 
@@ -111,4 +111,6 @@ function sendMessageFrom(connections, message, from, excludeItself) {
   }
 }
 
-server.listen(PORT);
+server.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});

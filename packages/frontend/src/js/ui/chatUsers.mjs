@@ -14,7 +14,7 @@ export default class ChatUsers {
       element.classList.add('chat__user');
       element.innerHTML = `
         <div class="chat__avatar" 
-        style="background-image: url(/src/img/${nick}.png?t=${Date.now()})" 
+        style="background-image: url(/users/${nick}.png?t=${Date.now()})" 
         data-role="user-avatar" data-user="${nick}"></div>
         <div class="chat__nick">${nick}</div>`;
       fragment.append(element);

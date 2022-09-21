@@ -37,7 +37,7 @@ export default class MessagesList {
     item.innerHTML = `
       <div class="chat__message-left">
         <div class="chat__message-photo"
-        style="background-image: url(/src/img/${from}.png?t=${Date.now()})" 
+        style="background-image: url('/users/${from}.png?t=${Date.now()}')" 
         data-role="user-avatar" data-user="${sanitize(from)}"></div>
       </div>
       <div class="chat__message-right">
